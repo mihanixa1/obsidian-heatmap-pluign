@@ -1,0 +1,10 @@
+{
+  "id": "activity-heatmap",
+  "name": "Activity Heatmap",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "Track document open/edit frequency with heatmap visualization. View activity by files, folders, or tags with sortable metrics.",
+  "author": "Your Name",
+  "authorUrl": "",
+  "isDesktopOnly": false
+}

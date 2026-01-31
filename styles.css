@@ -1,0 +1,319 @@
+/* Activity Heatmap Plugin Styles */
+
+/* ===== View Container ===== */
+.activity-heatmap-container {
+    padding: 16px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* ===== Header Controls ===== */
+.activity-heatmap-header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.activity-heatmap-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.activity-heatmap-control label {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.activity-heatmap-control select {
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid var(--background-modifier-border);
+    background: var(--background-primary);
+    color: var(--text-normal);
+    font-size: 13px;
+}
+
+/* ===== Heatmap Section ===== */
+.activity-heatmap-section {
+    margin-bottom: 24px;
+}
+
+.activity-heatmap-section-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-normal);
+}
+
+/* ===== Heatmap Calendar ===== */
+.heatmap-container {
+    overflow-x: auto;
+    padding: 8px 0;
+}
+
+.heatmap-grid {
+    display: flex;
+    gap: 3px;
+}
+
+.heatmap-week {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.heatmap-cell {
+    width: 12px;
+    height: 12px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: transform 0.1s ease;
+}
+
+.heatmap-cell:hover {
+    transform: scale(1.2);
+}
+
+/* Green color scheme */
+.heatmap-cell.level-0 { background-color: #ebedf0; }
+.heatmap-cell.level-1 { background-color: #9be9a8; }
+.heatmap-cell.level-2 { background-color: #40c463; }
+.heatmap-cell.level-3 { background-color: #30a14e; }
+.heatmap-cell.level-4 { background-color: #216e39; }
+
+/* Blue color scheme */
+.heatmap-blue .heatmap-cell.level-0 { background-color: #ebedf0; }
+.heatmap-blue .heatmap-cell.level-1 { background-color: #9ecae1; }
+.heatmap-blue .heatmap-cell.level-2 { background-color: #6baed6; }
+.heatmap-blue .heatmap-cell.level-3 { background-color: #3182bd; }
+.heatmap-blue .heatmap-cell.level-4 { background-color: #08519c; }
+
+/* Purple color scheme */
+.heatmap-purple .heatmap-cell.level-0 { background-color: #ebedf0; }
+.heatmap-purple .heatmap-cell.level-1 { background-color: #d4b9da; }
+.heatmap-purple .heatmap-cell.level-2 { background-color: #c994c7; }
+.heatmap-purple .heatmap-cell.level-3 { background-color: #df65b0; }
+.heatmap-purple .heatmap-cell.level-4 { background-color: #980043; }
+
+/* Orange color scheme */
+.heatmap-orange .heatmap-cell.level-0 { background-color: #ebedf0; }
+.heatmap-orange .heatmap-cell.level-1 { background-color: #fdbe85; }
+.heatmap-orange .heatmap-cell.level-2 { background-color: #fd8d3c; }
+.heatmap-orange .heatmap-cell.level-3 { background-color: #e6550d; }
+.heatmap-orange .heatmap-cell.level-4 { background-color: #a63603; }
+
+/* Dark theme adjustments */
+.theme-dark .heatmap-cell.level-0 { background-color: #161b22; }
+.theme-dark .heatmap-blue .heatmap-cell.level-0 { background-color: #161b22; }
+.theme-dark .heatmap-purple .heatmap-cell.level-0 { background-color: #161b22; }
+.theme-dark .heatmap-orange .heatmap-cell.level-0 { background-color: #161b22; }
+
+/* Heatmap tooltip */
+.heatmap-tooltip {
+    position: absolute;
+    padding: 8px 12px;
+    background: var(--background-primary);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 6px;
+    font-size: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    pointer-events: none;
+}
+
+.heatmap-tooltip-date {
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.heatmap-tooltip-count {
+    color: var(--text-muted);
+}
+
+/* Heatmap legend */
+.heatmap-legend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.heatmap-legend-label {
+    margin: 0 4px;
+}
+
+/* Day labels */
+.heatmap-day-labels {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    margin-right: 4px;
+    font-size: 9px;
+    color: var(--text-muted);
+}
+
+.heatmap-day-label {
+    height: 12px;
+    line-height: 12px;
+}
+
+/* Month labels */
+.heatmap-month-labels {
+    display: flex;
+    gap: 3px;
+    margin-bottom: 4px;
+    margin-left: 20px;
+    font-size: 10px;
+    color: var(--text-muted);
+}
+
+/* ===== File List ===== */
+.activity-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.activity-list-sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.activity-list {
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.activity-list-item {
+    display: flex;
+    align-items: center;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--background-modifier-border);
+    cursor: pointer;
+    transition: background-color 0.1s ease;
+}
+
+.activity-list-item:last-child {
+    border-bottom: none;
+}
+
+.activity-list-item:hover {
+    background-color: var(--background-secondary);
+}
+
+.activity-list-item-icon {
+    margin-right: 10px;
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.activity-list-item-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}
+
+.activity-list-item-path {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 2px;
+}
+
+.activity-list-item-count {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+.activity-list-item-count strong {
+    color: var(--text-normal);
+    font-weight: 600;
+}
+
+/* Deleted file indicator */
+.activity-list-item.deleted {
+    opacity: 0.6;
+}
+
+.activity-list-item.deleted .activity-list-item-name {
+    text-decoration: line-through;
+}
+
+/* Empty state */
+.activity-list-empty {
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+.activity-list-empty-icon {
+    font-size: 48px;
+    margin-bottom: 12px;
+    opacity: 0.5;
+}
+
+.activity-list-empty-text {
+    font-size: 14px;
+}
+
+/* ===== Stats Summary ===== */
+.activity-stats {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.activity-stat {
+    flex: 1;
+    padding: 12px 16px;
+    background: var(--background-secondary);
+    border-radius: 8px;
+}
+
+.activity-stat-value {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--text-normal);
+}
+
+.activity-stat-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+/* ===== Loading State ===== */
+.activity-loading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    color: var(--text-muted);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+    .activity-heatmap-header {
+        flex-direction: column;
+    }
+
+    .activity-stats {
+        flex-direction: column;
+    }
+
+    .heatmap-container {
+        overflow-x: scroll;
+    }
+}
